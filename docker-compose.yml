@@ -1,5 +1,12 @@
 version: '3'
 services:
+  app:
+    image: app:latest
+    command: start
+    ports:
+      - 8000:8000
+    links:
+      - db
   web:
     build: .
     ports:
@@ -11,5 +18,14 @@ services:
       - redis
   redis:
     image: redis
-volumes:
-  logvolume01: {}
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: abc123
+      MYSQL_ROOT_PASSWORD: abc123
+    ports:
+      - 3306:3306
+  volumes:
+    php  logvolume01: {}
