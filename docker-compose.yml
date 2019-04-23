@@ -5,12 +5,13 @@ services:
   app:
     build: .
     ports:
-      - "5000:8000"
+      - "8000:8000"
     volumes:
       - .:/app
     links:
       - redis
       - db
+      - adminer
 
   redis:
     image: redis
@@ -24,3 +25,16 @@ services:
       MYSQL_ROOT_PASSWORD: abc123
     ports:
       - 3306:3306
+
+  adminer:
+    image: javanile/adminer
+    environment:
+      MYSQL_HOST: db
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: abc123
+      MYSQL_ROOT_PASSWORD: abc123
+    ports:
+      - 8001:8080
+    links:
+      - db
