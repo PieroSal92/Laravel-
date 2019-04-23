@@ -50,10 +50,14 @@
 
     <body>
 
+
+
         <!-- Header starts here -->
     <header class="text-center">
         <h1 class="header-title">Laravel Blog by Pietro </h1>
         <span class="header-sub">Created by <b> Pietro Saluto</b></span>
+
+        <a href="/contacts">Contatti</a>
     </header>
         <!-- Header ends -->
 
