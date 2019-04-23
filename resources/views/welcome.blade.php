@@ -2,98 +2,88 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
+        <title>Laravel Blog</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="/css/app.css">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
+            body {
+                background: #e2e2e2;
             }
 
-            .full-height {
-                height: 100vh;
+            header {
+                min-height: 150px;
+                background: #666;
+                padding: 20px;
+                margin-bottom: 15px;
             }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
+            .footer-content {
+                padding-top: 10px;
             }
 
-            .position-ref {
-                position: relative;
+            .header-title,
+            .header-sub {
+                color: #e2e2e2;
             }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+            .header-sub {
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                padding: 3px 0;
             }
 
             .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
+                background: #fff;
+                padding: 20px;
+                margin-bottom: 10px;
             }
         </style>
+
     </head>
+
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+        <!-- Header starts here -->
+    <header class="text-center">
+        <h1 class="header-title">Laravel Blog by Pietro </h1>
+        <span class="header-sub">Created by <b> Pietro Saluto</b></span>
+    </header>
+        <!-- Header ends -->
 
+        <!-- Main content begins -->
+        <div class="main-content">
+        <div class="container">
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel Project
-                </div>
+                <h3>Getting Started with Laravel </h3>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type specimen book. It has survived
+                    not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                </p>
             </div>
         </div>
+    </div>
+        <!-- Main content ends here -->
+
+        <!-- Page footer begins -->
+    <footer class="navbar navbar-fixed-bottom">
+        <div class="container text-center">
+            &copy; {{ date('Y')}}. All rights reserved.
+        </div>
+    </footer>
+
+        <!-- Bootstrap JavaScript -->
+    <script src="/js/app.js"></script>
+
     </body>
 </html>
